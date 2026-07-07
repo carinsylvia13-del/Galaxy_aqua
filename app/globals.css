@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f7faf8;
+  --foreground: #182326;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+a,
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(45, 156, 219, 0.45);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(45, 156, 219, 0.24);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.hero-min {
+  min-height: clamp(520px, 76svh, 680px);
+}
+
+.image-overlay {
+  background:
+    linear-gradient(90deg, rgba(6, 45, 50, 0.84) 0%, rgba(6, 45, 50, 0.70) 38%, rgba(6, 45, 50, 0.25) 70%, rgba(6, 45, 50, 0.08) 100%),
+    linear-gradient(180deg, rgba(24, 35, 38, 0.12) 0%, rgba(24, 35, 38, 0.34) 100%);
+}
+
+.map-embed iframe {
+  border: 0;
+  min-height: 360px;
+  width: 100%;
+}
