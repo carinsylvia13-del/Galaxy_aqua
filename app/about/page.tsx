@@ -7,39 +7,48 @@ import { business, trustPoints } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Galaxy Aqua Solutions, a Chennai-based water-treatment business serving homes, apartments, commercial sites, and small industries."
+    "Meet David Santhamohan, sole founder of Galaxy Aqua Solutions, a Chennai water-treatment business established in 2014."
 };
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-white py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="page-shell grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div>
             <SectionHeading
-              eyebrow="About"
-              title="A local Chennai business focused on practical water solutions."
-              copy="Galaxy Aqua Solutions helps customers make sense of RO plants, filtration, treatment systems, wastewater handling, and maintenance decisions with direct, site-aware guidance."
+              eyebrow="Founder"
+              title="Good water guidance should feel clear."
+              copy="David Santhamohan is the sole founder of Galaxy Aqua Solutions. He started the organisation in 2014 to make dependable water-treatment products and practical guidance easier to access."
               level="h1"
             />
-            <div className="mt-7 rounded-[8px] border border-aqua-line bg-aqua-mist p-6 text-sm leading-7 text-slate-700">
+            <blockquote className="mt-7 border-l-4 border-[#1699a1] pl-5 text-xl font-semibold leading-8 text-aqua-ink">
+              “Every customer deserves a solution that fits their water, their space and the way they actually live or work.”
+            </blockquote>
+            <div className="mt-7 rounded-xl border border-aqua-line bg-aqua-mist p-6 text-sm leading-7 text-slate-700">
               <p>
-                The company is based in Sembakkam near Tambaram and supports water-treatment
-                needs across local homes, apartments, commercial spaces, and smaller industrial
-                facilities. The priority is simple: understand the site, recommend clearly, and
-                keep the system serviceable.
+                From Sembakkam near Tambaram, the business supports homes, apartments,
+                commercial spaces and smaller industrial facilities across Chennai and nearby
+                sites. The priority is simple: understand the water, recommend clearly and keep
+                the system serviceable.
               </p>
             </div>
           </div>
-          <div className="relative min-h-[420px] overflow-hidden rounded-[8px]">
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="absolute -inset-3 rounded-[2rem] bg-[#bfe9e3]" aria-hidden="true" />
             <Image
-              src="/images/technician-service.png"
-              alt="Illustrative technician inspecting water-treatment equipment"
-              fill
+              src="/images/founder-david-santhamohan.png"
+              alt="David Santhamohan, sole founder of Galaxy Aqua Solutions"
+              width={1104}
+              height={1392}
               priority
-              sizes="(min-width: 1024px) 46vw, 100vw"
-              className="object-cover"
+              sizes="(min-width: 1024px) 38vw, 90vw"
+              className="relative rounded-[1.6rem] object-cover shadow-soft"
             />
+            <div className="absolute -bottom-5 right-3 rounded-full bg-aqua-deep px-5 py-4 text-center text-white shadow-soft">
+              <span className="block text-[0.65rem] font-bold uppercase tracking-[0.15em]">Founded</span>
+              <strong className="mt-1 block text-2xl">2014</strong>
+            </div>
           </div>
         </div>
       </section>
