@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="page-shell grid min-h-[calc(100svh-72px)] gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-20">
           <div className="min-w-0">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-aqua-deep">
-              Water expertise since 2014
+              Water expertise since 2004
             </p>
             <h1 className="mt-5 max-w-3xl break-words text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-aqua-ink sm:text-6xl lg:text-[5.8rem]">
               Better water.
@@ -59,11 +59,11 @@ export default function HomePage() {
             <dl className="mt-12 grid max-w-2xl grid-cols-1 gap-4 border-t border-aqua-line pt-6 sm:grid-cols-3">
               <div>
                 <dt className="text-xs font-medium text-slate-600">Established</dt>
-                <dd className="mt-1 text-xl font-semibold text-aqua-ink">2014</dd>
+                <dd className="mt-1 text-xl font-semibold text-aqua-ink">2004</dd>
               </div>
               <div>
-                <dt className="text-xs font-medium text-slate-600">Catalogue</dt>
-                <dd className="mt-1 text-xl font-semibold text-aqua-ink">5 categories</dd>
+                <dt className="text-xs font-medium text-slate-600">Domestic customers</dt>
+                <dd className="mt-1 text-xl font-semibold text-aqua-ink">1,000+</dd>
               </div>
               <div>
                 <dt className="text-xs font-medium text-slate-600">Local support</dt>
@@ -120,9 +120,10 @@ export default function HomePage() {
           </div>
           <div className="lg:pt-8">
             <p className="text-base leading-8 text-slate-700">
-              Since 2014, Galaxy Aqua Solutions has helped customers navigate purification,
-              filtration, softening and dispensing with direct, site-aware guidance. Compare
-              categories here, then speak with us to confirm the treatment and capacity.
+              Since 2004, Galaxy Aqua Solutions has manufactured, supplied and serviced
+              water-treatment systems for domestic, commercial and industrial requirements.
+              Each solution can be adapted around source water, capacity, materials, dimensions
+              and the realities of the site.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -162,7 +163,7 @@ export default function HomePage() {
             />
             <div className="absolute -bottom-5 right-3 rounded-full bg-aqua-deep px-5 py-4 text-center text-white shadow-soft sm:right-[-1.25rem]">
               <span className="block text-[0.65rem] font-bold uppercase tracking-[0.15em]">Founded</span>
-              <strong className="mt-1 block text-2xl">2014</strong>
+              <strong className="mt-1 block text-2xl">2004</strong>
             </div>
           </div>
 
@@ -173,20 +174,25 @@ export default function HomePage() {
             <h2 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl">
               Good water guidance should feel clear.
             </h2>
-            <blockquote className="mt-7 border-l-4 border-[#1699a1] pl-5 text-xl font-semibold leading-8 text-aqua-ink sm:text-2xl">
-              “Every customer deserves a solution that fits their water, their space and the way
-              they actually live or work.”
-            </blockquote>
+            <div className="mt-7 rounded-2xl border border-aqua-line bg-aqua-mist p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.15em] text-aqua-deep">
+                Guiding principle
+              </p>
+              <p className="mt-2 text-xl font-semibold text-aqua-ink sm:text-2xl">
+                Satisfaction first. Business next.
+              </p>
+            </div>
             <div className="mt-7 grid gap-4 text-base leading-8 text-slate-700">
               <p>
                 <strong className="text-aqua-ink">David Santhamohan</strong> is the sole founder
-                of Galaxy Aqua Solutions. He started the organisation in 2014 to make dependable
-                water-treatment products and practical guidance easier to access.
+                of Galaxy Aqua Solutions. His industry career began in 1988 at Titanium Equipment
+                and Anode Manufacturing Company (TEAM), before he established Galaxy Aqua
+                Solutions in 2004.
               </p>
               <p>
-                The business brings domestic, commercial and component solutions into one
-                considered portfolio, supported from Sembakkam for customers across Chennai and
-                nearby sites.
+                Under his direction, the company combines manufacturing, supply and service with
+                practical customization for homes, commercial facilities and industrial sites.
+                The aim is to make the path from a water problem to a maintainable solution clear.
               </p>
             </div>
             <p className="mt-7 font-semibold text-aqua-ink">David Santhamohan</p>

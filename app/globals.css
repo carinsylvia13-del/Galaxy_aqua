@@ -68,6 +68,23 @@ textarea:focus-visible {
   width: 100%;
 }
 
+.product-card-title,
+.product-card-copy,
+.product-card-use {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card-title,
+.product-card-use {
+  -webkit-line-clamp: 2;
+}
+
+.product-card-copy {
+  -webkit-line-clamp: 3;
+}
+
 section[id] {
   scroll-margin-top: 88px;
 }
