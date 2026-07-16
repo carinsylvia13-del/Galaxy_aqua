@@ -28,7 +28,7 @@ export const business = {
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/#products" },
+  { label: "Products", href: "/products" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" }

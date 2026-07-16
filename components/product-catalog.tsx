@@ -1,11 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, CheckCircle2, MessageCircle, SlidersHorizontal, X } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  MessageCircle,
+  SlidersHorizontal,
+  X
+} from "lucide-react";
 import { business } from "@/lib/site";
 import {
   categoryLabels,
+  featuredProducts,
   products,
   type Product,
   type ProductCategory
@@ -14,6 +23,9 @@ import {
 type ActiveCategory = "all" | ProductCategory;
 type SiteType = "home" | "office" | "commercial" | "industrial";
 type Concern = "drinking" | "hardness" | "shared" | "process" | "replacement";
+type ProductCatalogProps = {
+  variant?: "featured" | "full";
+};
 
 const filterOptions: Array<{ value: ActiveCategory; label: string }> = [
   { value: "all", label: "All products" },
@@ -34,7 +46,7 @@ function getRecommendation(site: SiteType, concern: Concern) {
   if (concern === "shared") {
     return {
       category: "dispensers" as const,
-      copy: "Start with dispensers. Peak users, tap count, storage and cooling recovery will determine the right model."
+      copy: "Start with dispensers. Peak users, outlet count, storage and cooling recovery will determine the right model."
     };
   }
 
@@ -72,7 +84,7 @@ function getRecommendation(site: SiteType, concern: Concern) {
   };
 }
 
-export function ProductCatalog() {
+export function ProductCatalog({ variant = "full" }: ProductCatalogProps) {
   const [activeCategory, setActiveCategory] = useState<ActiveCategory>("all");
   const [siteType, setSiteType] = useState<SiteType>("home");
   const [concern, setConcern] = useState<Concern>("drinking");
@@ -80,13 +92,15 @@ export function ProductCatalog() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const isFeatured = variant === "featured";
+  const catalogueProducts = isFeatured ? featuredProducts : products;
 
   const visibleProducts = useMemo(
     () =>
       activeCategory === "all"
-        ? products
-        : products.filter((product) => product.category === activeCategory),
-    [activeCategory]
+        ? catalogueProducts
+        : catalogueProducts.filter((product) => product.category === activeCategory),
+    [activeCategory, catalogueProducts]
   );
 
   useEffect(() => {
@@ -147,23 +161,26 @@ export function ProductCatalog() {
         <div className="grid min-w-0 gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div className="min-w-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-aqua-deep">
-              Product catalogue
+              {isFeatured ? "Featured solutions" : "Product catalogue"}
             </p>
             <h2 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl lg:text-6xl">
-              Solutions, neatly sorted.
+              {isFeatured ? "A focused place to start." : "Solutions, neatly sorted."}
             </h2>
           </div>
           <p className="min-w-0 max-w-xl text-base leading-7 text-slate-700">
-            Compare by application, then speak with us before choosing capacity or treatment stages.
-            Source water and actual usage should guide every final recommendation.
+            {isFeatured
+              ? "Explore four representative solutions for homes, shared spaces and commercial sites. Open any product for details and a direct enquiry option."
+              : "Compare by application, then speak with us before choosing capacity or treatment stages. Source water and actual usage should guide every final recommendation."}
           </p>
         </div>
 
-        <form
-          onSubmit={submitGuide}
-          className="mt-10 rounded-2xl border border-aqua-line bg-white p-5 shadow-sm sm:p-7"
-          aria-labelledby="selector-heading"
-        >
+        {!isFeatured ? (
+          <>
+            <form
+              onSubmit={submitGuide}
+              className="mt-10 rounded-2xl border border-aqua-line bg-white p-5 shadow-sm sm:p-7"
+              aria-labelledby="selector-heading"
+            >
           <div className="flex items-start gap-3">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-aqua-deep text-white">
               <SlidersHorizontal aria-hidden="true" size={19} />
@@ -223,37 +240,39 @@ export function ProductCatalog() {
               <p>{recommendation}</p>
             </div>
           ) : null}
-        </form>
+            </form>
 
-        <div className="mt-9 flex min-w-0 flex-wrap gap-2" role="group" aria-label="Filter products">
-          {filterOptions.map((filter) => {
-            const selected = activeCategory === filter.value;
-            return (
-              <button
-                key={filter.value}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => {
-                  setActiveCategory(filter.value);
-                  setRecommendation("");
-                }}
-                className={`min-h-11 rounded-full border px-4 text-sm font-semibold transition ${
-                  selected
-                    ? "border-aqua-deep bg-aqua-deep text-white"
-                    : "border-[#bfd7d2] bg-transparent text-aqua-ink hover:border-aqua-deep hover:bg-white"
-                }`}
-              >
-                {filter.label}
-              </button>
-            );
-          })}
-        </div>
+            <div className="mt-9 flex min-w-0 flex-wrap gap-2" role="group" aria-label="Filter products">
+              {filterOptions.map((filter) => {
+                const selected = activeCategory === filter.value;
+                return (
+                  <button
+                    key={filter.value}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => {
+                      setActiveCategory(filter.value);
+                      setRecommendation("");
+                    }}
+                    className={`min-h-11 rounded-full border px-4 text-sm font-semibold transition ${
+                      selected
+                        ? "border-aqua-deep bg-aqua-deep text-white"
+                        : "border-[#bfd7d2] bg-transparent text-aqua-ink hover:border-aqua-deep hover:bg-white"
+                    }`}
+                  >
+                    {filter.label}
+                  </button>
+                );
+              })}
+            </div>
 
-        <p className="mt-5 text-sm font-medium text-slate-700" aria-live="polite">
-          Showing {visibleProducts.length} {visibleProducts.length === 1 ? "product" : "products"}
-        </p>
+            <p className="mt-5 text-sm font-medium text-slate-700" aria-live="polite">
+              Showing {visibleProducts.length} {visibleProducts.length === 1 ? "product" : "products"}
+            </p>
+          </>
+        ) : null}
 
-        <div className="mt-6 grid min-w-0 auto-rows-fr gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <div className={`${isFeatured ? "mt-10" : "mt-6"} grid min-w-0 auto-rows-fr gap-5 sm:grid-cols-2 xl:grid-cols-4`}>
           {visibleProducts.map((product) => {
             return (
               <article
@@ -303,6 +322,24 @@ export function ProductCatalog() {
             );
           })}
         </div>
+
+        {isFeatured ? (
+          <div className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-aqua-line bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:p-7">
+            <div>
+              <p className="font-semibold text-aqua-ink">Looking for another capacity or treatment type?</p>
+              <p className="mt-1 text-sm leading-6 text-slate-600">
+                Browse the complete range of {products.length} purifiers, dispensers, softeners, commercial systems and components.
+              </p>
+            </div>
+            <Link
+              href="/products"
+              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-aqua-deep px-6 text-sm font-semibold text-white transition hover:bg-[#064D55]"
+            >
+              View all products
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+        ) : null}
       </div>
 
       {selectedProduct ? (

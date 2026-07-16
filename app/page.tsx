@@ -45,7 +45,7 @@ export default function HomePage() {
                 href="#products"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-aqua-deep px-6 text-sm font-semibold text-white transition hover:bg-[#064D55]"
               >
-                Explore products
+                View featured products
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
               <Link
@@ -88,7 +88,7 @@ export default function HomePage() {
                 <div className="relative min-h-[230px] overflow-hidden rounded-2xl bg-white sm:min-h-0">
                   <Image
                     src="/images/products/50d646ab-7a5b-4898-b536-38f66973c00b.JPG"
-                    alt="Mitty Nano domestic RO purifier"
+                    alt="Space-saving domestic RO purifier"
                     fill
                     priority
                     sizes="(min-width: 1024px) 20vw, 40vw"
@@ -147,7 +147,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ProductCatalog />
+      <ProductCatalog variant="featured" />
 
       <section id="founder" className="scroll-mt-24 bg-white py-16 sm:py-24">
         <div className="page-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
