@@ -12,6 +12,7 @@ export type Product = {
   idealFor: string;
   selection: string;
   image: string;
+  featured?: boolean;
 };
 
 export const categoryLabels: Record<ProductCategory, string> = {
@@ -29,10 +30,11 @@ export const products: Product[] = [
     description: "An integrated purifier and dispenser for convenient everyday drinking-water access.",
     idealFor: "Homes, clinics and compact workplaces",
     selection: "Confirm source-water TDS and daily drinking-water use.",
-    image: "3f398381-d8db-47d1-a26f-9f69ff5f003d.JPG"
+    image: "3f398381-d8db-47d1-a26f-9f69ff5f003d.JPG",
+    featured: true
   },
   {
-    name: "Mitty Mini RO-ST",
+    name: "Compact Domestic RO Purifier",
     category: "purifiers",
     description: "A compact reverse-osmosis package for domestic drinking-water purification.",
     idealFor: "Kitchens and small households",
@@ -40,7 +42,7 @@ export const products: Product[] = [
     image: "4287e7c6-e383-4325-8238-464af3596652.JPG"
   },
   {
-    name: "Mitty Nano RO",
+    name: "Space-Saving RO Purifier",
     category: "purifiers",
     description: "A space-conscious domestic purifier package for routine kitchen use.",
     idealFor: "Apartments and compact kitchens",
@@ -48,7 +50,7 @@ export const products: Product[] = [
     image: "50d646ab-7a5b-4898-b536-38f66973c00b.JPG"
   },
   {
-    name: "Mitty Wonder RO",
+    name: "Advanced Domestic RO Purifier",
     category: "purifiers",
     description: "A feature-rich domestic purifier package for convenient drinking-water treatment.",
     idealFor: "Families wanting an integrated purifier",
@@ -64,43 +66,44 @@ export const products: Product[] = [
     image: "c2b10ca4-a593-48a0-aa3d-6a85f97931dd.JPG"
   },
   {
-    name: "Mitty Stainless 3-Tap Cooler",
+    name: "SS RO Water Dispenser",
     category: "dispensers",
-    description: "A durable stainless-steel cooler for convenient multi-user drinking-water access.",
+    description: "A durable stainless-steel RO dispenser for convenient multi-user drinking-water access.",
     idealFor: "Schools, offices and shared facilities",
     selection: "Size cooling and storage around peak-hour demand.",
-    image: "160f4d66-acdb-4c53-8f9e-73bd7f71c9b4.JPG"
+    image: "160f4d66-acdb-4c53-8f9e-73bd7f71c9b4.JPG",
+    featured: true
   },
   {
-    name: "Mitty Twin-Tap Water Dispenser",
-    category: "dispensers",
-    description: "A floor-standing dispenser with two taps for busy shared spaces.",
-    idealFor: "Workplaces, retail and public areas",
-    selection: "Confirm desired temperature options and user volume.",
+    name: "Domestic RO Purifier",
+    category: "purifiers",
+    description: "A compact domestic RO purifier for convenient everyday drinking-water access.",
+    idealFor: "Home Kitchen/ Office",
+    selection: "Confirm source-water TDS, storage needs and service access.",
     image: "1b749f96-4e1b-4849-877c-89b4c3b9cdaa.JPG"
   },
   {
-    name: "Mitty Climate+ Dispenser",
+    name: "Hot & Normal RO Water Dispenser",
     category: "dispensers",
-    description: "A compact countertop dispenser offering convenient hot and cold water service.",
-    idealFor: "Pantries, reception areas and clinics",
-    selection: "Review heating, cooling and supply-water requirements.",
+    description: "A compact RO dispenser offering convenient hot and normal drinking water.",
+    idealFor: "Home Kitchen/ Office, Pantries, and reception areas",
+    selection: "Review heating, supply-water and daily-use requirements.",
     image: "235fcd52-d6d3-4e66-b3eb-dfc37625aecb.JPG"
   },
   {
-    name: "Mitty Floor-Standing Cooler",
+    name: "Floor-Standing Stainless RO Water Dispenser",
     category: "dispensers",
-    description: "A stainless-steel drinking-water cooler built for dependable everyday dispensing.",
+    description: "A stainless-steel RO water dispenser built for dependable everyday use.",
     idealFor: "Institutions and commercial premises",
-    selection: "Match tap count and cooling recovery to expected demand.",
+    selection: "Match outlet count and cooling recovery to expected demand.",
     image: "3072fa2c-ee80-48ac-a67a-e17a97e27bdb.JPG"
   },
   {
-    name: "Compact Hot-Water Unit",
-    category: "dispensers",
-    description: "A space-saving wall-mounted unit for readily available treated hot water.",
-    idealFor: "Small pantries and service counters",
-    selection: "Confirm electrical load, mounting and required output.",
+    name: "Bathroom Softner - Auto",
+    category: "softeners",
+    description: "An automatic compact softener that helps reduce hard-water scale in the bathroom.",
+    idealFor: "Independent bathroom",
+    selection: "Confirm water hardness, inlet pressure and bathroom flow requirement.",
     image: "30ff9236-cc56-48cc-87ea-1467acf9a1ad.JPG"
   },
   {
@@ -117,7 +120,8 @@ export const products: Product[] = [
     description: "An automated ion-exchange softener for reducing hardness in incoming water.",
     idealFor: "Whole-home and utility-water treatment",
     selection: "Test hardness and calculate peak flow before sizing.",
-    image: "2a4108c0-6595-4d8f-9663-284cfdbb3fe5.JPG"
+    image: "2a4108c0-6595-4d8f-9663-284cfdbb3fe5.JPG",
+    featured: true
   },
   {
     name: "Single-Tank Water Softener",
@@ -152,31 +156,32 @@ export const products: Product[] = [
     image: "3a4bcd03-6382-4cb1-9591-5c97cba8fc17.JPG"
   },
   {
-    name: "PGM Stainless Purifier",
+    name: "SS Dispenser with built in RO",
     category: "commercial",
-    description: "A stainless commercial purifier for higher-demand treated drinking water.",
-    idealFor: "Offices, schools and institutions",
-    selection: "Confirm peak demand, inlet quality and tap requirement.",
+    description: "A stainless-steel dispenser with built-in RO for higher-demand drinking water.",
+    idealFor: "Factories, offices, schools and institutions",
+    selection: "Confirm peak demand, inlet quality and outlet requirement.",
     image: "5cb49ded-e2fb-472c-bffa-da6d7870ba48.JPG"
   },
   {
-    name: "PGM Drinking-Water Station",
+    name: "Dispenser with Commercial RO",
     category: "commercial",
-    description: "A high-capacity stainless station with multiple dispensing points.",
+    description: "A high-capacity dispenser paired with commercial RO treatment.",
     idealFor: "Factories, campuses and shared facilities",
-    selection: "Match purification, storage and taps to shift demand.",
+    selection: "Match purification, storage and dispensing outlets to shift demand.",
     image: "7c2d8276-fbfd-417d-9d48-b045cbb5bba9.JPG"
   },
   {
     name: "Compact Commercial RO Plant",
     category: "commercial",
-    description: "An open-frame reverse-osmosis plant designed for straightforward service access.",
+    description: "250/500/1000 Lph",
     idealFor: "Restaurants, offices and light industry",
     selection: "Capacity follows feed-water analysis and hourly demand.",
-    image: "a134e12e-9807-47fb-abf5-60576c6e1564.JPG"
+    image: "a134e12e-9807-47fb-abf5-60576c6e1564.JPG",
+    featured: true
   },
   {
-    name: "Mitty 250 LPH RO Plant",
+    name: "250 LPH Commercial RO Plant",
     category: "commercial",
     description: "A packaged reverse-osmosis plant for higher-volume treated-water production.",
     idealFor: "Commercial and institutional applications",
@@ -184,7 +189,7 @@ export const products: Product[] = [
     image: "b0869941-68fd-4587-b9eb-f63a0a33903f.JPG"
   },
   {
-    name: "Mitty Portable DM Plant",
+    name: "Portable Demineralisation Plant",
     category: "commercial",
     description: "A compact demineralisation unit for lower-mineral process-water requirements.",
     idealFor: "Labs, service applications and light process use",
@@ -203,12 +208,12 @@ export const products: Product[] = [
     name: "ORG Scale-Free Cartridge",
     category: "components",
     description: "A compact anti-scale cartridge that helps protect downstream equipment.",
-    idealFor: "Point-of-use equipment protection",
+    idealFor: "Washing machine/ Shower",
     selection: "Confirm connection size, flow and replacement interval.",
     image: "23e1c64d-b5ee-4ba8-8d73-25c3cec2b5dd.JPG"
   },
   {
-    name: "Ruzo Alkaline Cartridge",
+    name: "Alkaline Cartridge",
     category: "components",
     description: "A post-treatment cartridge used as an alkaline finishing stage.",
     idealFor: "Compatible domestic purifier upgrades",
@@ -232,3 +237,5 @@ export const products: Product[] = [
     image: "filmtec-membrane.JPG"
   }
 ];
+
+export const featuredProducts = products.filter((product) => product.featured);

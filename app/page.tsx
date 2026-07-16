@@ -1,27 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactStrip } from "@/components/contact-strip";
 import { ProductCatalog } from "@/components/product-catalog";
-import { business } from "@/lib/site";
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Understand",
-    copy: "Share your source water, site type, daily use and the problem you want to solve."
-  },
-  {
-    number: "02",
-    title: "Recommend",
-    copy: "We narrow the treatment stages and capacity around the water—not a generic product pitch."
-  },
-  {
-    number: "03",
-    title: "Support",
-    copy: "Get a clear installation path, operating guidance and practical service support."
-  }
-];
 
 export default function HomePage() {
   return (
@@ -37,22 +18,22 @@ export default function HomePage() {
               <span className="block text-[#087c84]">Better everyday.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
-              Purification, filtration, softening and commercial water systems for homes,
-              workplaces and industry—selected around your source water and actual usage.
+              RO purification, softening and commercial water-treatment systems selected for
+              your source water and daily requirement.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#products"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-aqua-deep px-6 text-sm font-semibold text-white transition hover:bg-[#064D55]"
               >
-                Explore products
+                View featured products
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
               <Link
                 href="/contact"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-aqua-line bg-white px-6 text-sm font-semibold text-aqua-ink transition hover:border-aqua-deep"
               >
-                Find your solution
+                Contact us
               </Link>
             </div>
 
@@ -88,7 +69,7 @@ export default function HomePage() {
                 <div className="relative min-h-[230px] overflow-hidden rounded-2xl bg-white sm:min-h-0">
                   <Image
                     src="/images/products/50d646ab-7a5b-4898-b536-38f66973c00b.JPG"
-                    alt="Mitty Nano domestic RO purifier"
+                    alt="Space-saving domestic RO purifier"
                     fill
                     priority
                     sizes="(min-width: 1024px) 20vw, 40vw"
@@ -97,10 +78,7 @@ export default function HomePage() {
                 </div>
                 <div className="rounded-2xl bg-aqua-deep p-5 text-white">
                   <CheckCircle2 aria-hidden="true" size={22} />
-                  <p className="mt-4 text-lg font-semibold">From assessment to aftercare.</p>
-                  <p className="mt-2 text-sm leading-6 text-white/80">
-                    One clear path from water concern to serviceable solution.
-                  </p>
+                  <p className="mt-4 text-lg font-semibold">Products, installation and service.</p>
                 </div>
               </div>
             </div>
@@ -108,125 +86,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <div className="page-shell grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-aqua-deep">
-              Why Galaxy Aqua
-            </p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl">
-              The right treatment begins with understanding the water.
-            </h2>
-          </div>
-          <div className="lg:pt-8">
-            <p className="text-base leading-8 text-slate-700">
-              Since 2004, Galaxy Aqua Solutions has manufactured, supplied and serviced
-              water-treatment systems for domestic, commercial and industrial requirements.
-              Each solution can be adapted around source water, capacity, materials, dimensions
-              and the realities of the site.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={`tel:${business.phoneHref}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-full bg-aqua-deep px-5 text-sm font-semibold text-white"
-              >
-                <Phone aria-hidden="true" size={17} />
-                Call {business.phoneDisplay}
-              </a>
-              <a
-                href={business.whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-aqua-line bg-white px-5 text-sm font-semibold text-aqua-ink"
-              >
-                <MessageCircle aria-hidden="true" size={17} />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProductCatalog variant="featured" />
 
-      <ProductCatalog />
-
-      <section id="founder" className="scroll-mt-24 bg-white py-16 sm:py-24">
-        <div className="page-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-3 rounded-[2rem] bg-[#bfe9e3]" aria-hidden="true" />
-            <Image
-              src="/images/founder-david-santhamohan.png"
-              alt="David Santhamohan, sole founder of Galaxy Aqua Solutions"
-              width={1104}
-              height={1392}
-              className="relative rounded-[1.6rem] object-cover shadow-soft"
-              sizes="(min-width: 1024px) 34vw, 90vw"
-            />
-            <div className="absolute -bottom-5 right-3 rounded-full bg-aqua-deep px-5 py-4 text-center text-white shadow-soft sm:right-[-1.25rem]">
-              <span className="block text-[0.65rem] font-bold uppercase tracking-[0.15em]">Founded</span>
-              <strong className="mt-1 block text-2xl">2004</strong>
-            </div>
-          </div>
-
-          <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-aqua-deep">
-              Founder&apos;s note
-            </p>
-            <h2 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl">
-              Good water guidance should feel clear.
-            </h2>
-            <div className="mt-7 rounded-2xl border border-aqua-line bg-aqua-mist p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.15em] text-aqua-deep">
-                Guiding principle
-              </p>
-              <p className="mt-2 text-xl font-semibold text-aqua-ink sm:text-2xl">
-                Satisfaction first. Business next.
-              </p>
-            </div>
-            <div className="mt-7 grid gap-4 text-base leading-8 text-slate-700">
-              <p>
-                <strong className="text-aqua-ink">David Santhamohan</strong> is the sole founder
-                of Galaxy Aqua Solutions. His industry career began in 1988 at Titanium Equipment
-                and Anode Manufacturing Company (TEAM), before he established Galaxy Aqua
-                Solutions in 2004.
-              </p>
-              <p>
-                Under his direction, the company combines manufacturing, supply and service with
-                practical customization for homes, commercial facilities and industrial sites.
-                The aim is to make the path from a water problem to a maintainable solution clear.
-              </p>
-            </div>
-            <p className="mt-7 font-semibold text-aqua-ink">David Santhamohan</p>
-            <p className="mt-1 text-sm text-slate-600">Sole Founder · Galaxy Aqua Solutions</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-aqua-deep py-16 text-white sm:py-24">
+      <section className="bg-white py-14 sm:py-16">
         <div className="page-shell">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9fe1db]">
-            How we help
-          </p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
-            A clearer route to better water.
-          </h2>
-          <div className="mt-10 grid border-t border-white/20 md:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <article
-                key={step.number}
-                className={`py-8 md:px-8 ${index === 0 ? "md:pl-0" : "border-t border-white/20 md:border-l md:border-t-0"}`}
-              >
-                <span className="text-xs font-bold text-[#9fe1db]">{step.number}</span>
-                <h3 className="mt-8 text-2xl font-semibold">{step.title}</h3>
-                <p className="mt-3 max-w-sm text-sm leading-7 text-white/75">{step.copy}</p>
-              </article>
-            ))}
+          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-aqua-line bg-aqua-mist p-6 sm:p-8 md:flex-row md:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-aqua-deep">
+                Treatment services
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold text-aqua-ink sm:text-3xl">
+                ETP and sewage treatment plant services are available.
+              </h2>
+            </div>
+            <Link
+              href="/services"
+              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-aqua-deep px-6 text-sm font-semibold text-white transition hover:bg-[#064D55]"
+            >
+              View services
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
           </div>
         </div>
       </section>
 
       <ContactStrip
-        title="Not sure which system fits?"
-        copy="Share your source water, daily requirement and site type. We will help identify the right next step."
+        title="Tell us what your site needs."
+        copy="Share the source water and daily requirement for a practical recommendation."
       />
     </>
   );

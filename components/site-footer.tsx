@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { business, navigation } from "@/lib/site";
 
 type SiteFooterProps = {
@@ -12,8 +13,14 @@ export function SiteFooter({ businessName }: SiteFooterProps) {
       <div className="page-shell grid gap-10 py-12 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-[8px] bg-aqua-deep text-base font-bold text-white">
-              GA
+            <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-[8px] bg-aqua-mist p-1">
+              <Image
+                src="/images/galaxy-aqua-logo.png"
+                alt=""
+                width={44}
+                height={44}
+                className="h-full w-full object-contain"
+              />
             </span>
             <div>
               <p className="text-base font-semibold text-aqua-ink">{businessName}</p>
@@ -21,8 +28,7 @@ export function SiteFooter({ businessName }: SiteFooterProps) {
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-6 text-slate-600">
-            RO plants, filtration, STP, ETP, softening, recycling, and service support for
-            homes, apartments, commercial sites, and small industries.
+            RO, softening, STP, ETP and water-treatment support for homes and businesses.
           </p>
         </div>
 
@@ -55,6 +61,10 @@ export function SiteFooter({ businessName }: SiteFooterProps) {
             <a className="flex gap-3 hover:text-aqua-deep" href={business.whatsappHref}>
               <MessageCircle aria-hidden="true" className="mt-0.5 shrink-0" size={17} />
               <span>WhatsApp enquiry</span>
+            </a>
+            <a className="flex gap-3 hover:text-aqua-deep" href={`mailto:${business.email}`}>
+              <Mail aria-hidden="true" className="mt-0.5 shrink-0" size={17} />
+              <span>{business.email}</span>
             </a>
             <a
               className="flex gap-3 leading-6 hover:text-aqua-deep"

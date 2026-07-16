@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
@@ -19,8 +20,15 @@ export function SiteHeader() {
           aria-label="Galaxy Aqua Solutions home"
           onClick={() => setOpen(false)}
         >
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[8px] bg-aqua-deep text-base font-bold text-white">
-            GA
+          <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-[8px] bg-white p-1 shadow-sm">
+            <Image
+              src="/images/galaxy-aqua-logo.png"
+              alt=""
+              width={44}
+              height={44}
+              priority
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="min-w-0">
             <span className="block truncate text-base font-semibold text-aqua-ink">

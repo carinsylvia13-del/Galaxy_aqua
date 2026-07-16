@@ -23,12 +23,12 @@ export const business = {
     "2, 6th St, Navaneethan Nagar, Thirumalai Nagar, Sembakkam, Chennai, Tambaram, Tamil Nadu 600073",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=2%2C%206th%20St%2C%20Navaneethan%20Nagar%2C%20Thirumalai%20Nagar%2C%20Sembakkam%2C%20Chennai%2C%20Tambaram%2C%20Tamil%20Nadu%20600073",
-  email: ""
+  email: "galaxysanthan@gmail.com"
 };
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/#products" },
+  { label: "Products", href: "/products" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" }

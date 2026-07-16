@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { SectionHeading } from "@/components/section-heading";
 import { business } from "@/lib/site";
@@ -21,7 +21,7 @@ export default function ContactPage() {
             <SectionHeading
               eyebrow="Contact"
               title="Talk to Galaxy Aqua Solutions."
-              copy="Share your requirement, source water, usage, and site type. Phone and WhatsApp are the active contact paths for now."
+              copy="Share your water-treatment requirement by phone, WhatsApp or email."
               level="h1"
             />
             <div className="mt-8 grid gap-4">
@@ -47,6 +47,18 @@ export default function ContactPage() {
                 <span>
                   <span className="block text-sm font-semibold">WhatsApp</span>
                   <span className="block text-sm text-slate-600">Send site details directly</span>
+                </span>
+              </a>
+              <a
+                href={`mailto:${business.email}`}
+                className="flex min-h-16 items-center gap-4 rounded-[8px] border border-aqua-line bg-aqua-mist p-5 text-aqua-ink transition hover:border-aqua-blue"
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[8px] bg-white text-aqua-deep">
+                  <Mail aria-hidden="true" size={20} />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold">Email</span>
+                  <span className="block text-sm text-slate-600">{business.email}</span>
                 </span>
               </a>
               <a
