@@ -163,14 +163,20 @@ export function ProductCatalog({ variant = "full" }: ProductCatalogProps) {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-aqua-deep">
               {isFeatured ? "Featured solutions" : "Product catalogue"}
             </p>
-            <h2 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl lg:text-6xl">
-              {isFeatured ? "A focused place to start." : "Solutions, neatly sorted."}
-            </h2>
+            {isFeatured ? (
+              <h2 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl lg:text-6xl">
+                A focused place to start.
+              </h2>
+            ) : (
+              <h1 className="mt-4 break-words text-4xl font-semibold tracking-[-0.04em] text-aqua-ink sm:text-5xl lg:text-6xl">
+                Find the right product.
+              </h1>
+            )}
           </div>
           <p className="min-w-0 max-w-xl text-base leading-7 text-slate-700">
             {isFeatured
               ? "Explore four representative solutions for homes, shared spaces and commercial sites. Open any product for details and a direct enquiry option."
-              : "Compare by application, then speak with us before choosing capacity or treatment stages. Source water and actual usage should guide every final recommendation."}
+              : "Filter by application and open a product for details or a direct enquiry."}
           </p>
         </div>
 

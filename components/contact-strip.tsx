@@ -8,8 +8,8 @@ type ContactStripProps = {
 };
 
 export function ContactStrip({
-  title = "Need help choosing the right water-treatment setup?",
-  copy = "Talk to Galaxy Aqua Solutions for RO, STP, ETP, filtration, softening, recycling, or maintenance support."
+  title = "Need help choosing a water-treatment solution?",
+  copy = "Call or message us with your site and water requirement."
 }: ContactStripProps) {
   return (
     <section className="bg-aqua-deep py-12 text-white">

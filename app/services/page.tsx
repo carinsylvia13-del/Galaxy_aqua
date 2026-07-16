@@ -20,16 +20,9 @@ export default function ServicesPage() {
             <SectionHeading
               eyebrow="Services"
               title="Water-treatment support matched to your site."
-              copy="Galaxy Aqua Solutions helps customers choose, maintain, and improve treatment systems without making the first conversation complicated."
+              copy="RO, softening, filtration, STP, ETP and maintenance for homes and commercial sites."
               level="h1"
             />
-            <div className="mt-7 grid gap-4 rounded-[8px] border border-aqua-line bg-aqua-mist p-5 text-sm leading-7 text-slate-700">
-              <p>
-                Share the source water, daily usage, site type, and current issue. The
-                recommendation can then focus on the right treatment path rather than a generic
-                product list.
-              </p>
-            </div>
           </div>
           <div className="relative min-h-[420px] overflow-hidden rounded-[8px]">
             <Image
@@ -49,7 +42,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Catalog"
             title="Core solutions"
-            copy="A practical service menu for residential, apartment, commercial, and industrial water-treatment requirements."
+            copy="Services for residential, commercial and industrial water requirements."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {serviceCatalog.map((service) => (
@@ -64,37 +57,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
-        <div className="page-shell grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="relative min-h-[390px] overflow-hidden rounded-[8px]">
-            <Image
-              src="/images/water-process.png"
-              alt="Illustrative filtration process moving from raw water to clear treated water"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <SectionHeading
-              eyebrow="Approach"
-              title="Treatment choices should follow the water, not the other way around."
-              copy="RO, filtration, softening, STP, and ETP systems work best when they are selected after understanding source quality, capacity needs, disposal or reuse goals, and service access."
-            />
-            <div className="mt-8 grid gap-4 text-sm leading-7 text-slate-700">
-              <p className="rounded-[8px] border border-aqua-line bg-aqua-mist p-5">
-                For new installations, the first step is a clear requirement review.
-              </p>
-              <p className="rounded-[8px] border border-aqua-line bg-aqua-mist p-5">
-                For existing systems, the first step is checking symptoms, service history,
-                filters, membranes, media, and actual output quality.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ContactStrip title="Have a specific service requirement?" copy="Call or WhatsApp the site details and Galaxy Aqua Solutions will help identify the right next step." />
+      <ContactStrip
+        title="Have a service requirement?"
+        copy="Call or message us with the site and water details."
+      />
     </>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactStrip } from "@/components/contact-strip";
 import { SectionHeading } from "@/components/section-heading";
-import { business, trustPoints } from "@/lib/site";
+import { trustPoints } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -63,9 +63,9 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="page-shell">
           <SectionHeading
-            eyebrow="Principles"
-            title="Clear, reachable, and responsible."
-            copy="The company works as a manufacturer, supplier and service provider, with recommendations shaped around water quality, usage, maintenance and the needs of each site."
+              eyebrow="Principles"
+              title="Clear, reachable, and responsible."
+              copy="Recommendations are shaped around water quality, usage and maintenance needs."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {trustPoints.map((point) => (
@@ -75,43 +75,6 @@ export default function AboutPage() {
                 <p className="mt-3 text-sm leading-6 text-slate-600">{point.copy}</p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="page-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="relative min-h-[380px] overflow-hidden rounded-[8px]">
-            <Image
-              src="/images/water-process.png"
-              alt="Illustrative water-treatment flow from raw water to clear output"
-              fill
-              sizes="(min-width: 1024px) 46vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <SectionHeading
-              eyebrow="Location"
-              title="Based near Tambaram for practical local access."
-              copy={business.address}
-            />
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={`tel:${business.phoneHref}`}
-                className="inline-flex min-h-12 items-center justify-center rounded-[8px] bg-aqua-deep px-5 text-sm font-semibold text-white"
-              >
-                Call {business.phoneDisplay}
-              </a>
-              <a
-                href={business.mapsHref}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-[8px] border border-aqua-line bg-aqua-mist px-5 text-sm font-semibold text-aqua-deep"
-              >
-                Open map
-              </a>
-            </div>
           </div>
         </div>
       </section>
